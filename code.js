@@ -4,14 +4,14 @@ const myLibrary = [
     title: "1984",
     author: "George Orwell",
     pages: 328,
-    haveRead: true,
+    haveRead: "yes",
   },
 
   {
     title: "The Catcher in the Rye",
     author: "J.D. Salinger",
     pages: 277,
-    haveRead: false,
+    haveRead: "no",
   },
 ];
 
@@ -25,6 +25,7 @@ function Book(title, author, pages, haveRead) {
 const booksContainer = document.querySelector(".books-container");
 function addBookToLibrary() {
   for (const book of myLibrary) {
+    // Make all the nodes that will be appended and add their classes
     const bookTitle = document.createElement("p");
     bookTitle.className = "book-title";
     const bookAuthor = document.createElement("p");
@@ -34,18 +35,15 @@ function addBookToLibrary() {
     const bookRead = document.createElement("p");
     bookRead.className = "book-read";
 
-    //Itirate trough every property to add it to a card
-    //inside the library .book-container
-
+    // Create the card the book will be in.
     const bookCard = document.createElement("div");
     bookCard.className = "book-card";
-
     bookTitle.textContent = book.title;
     bookAuthor.textContent = book.author;
     bookPages.textContent = book.pages;
     bookRead.textContent = book.haveRead;
 
-    //keep at the end after changing the content
+    // Append everything.
     bookCard.appendChild(bookTitle);
     bookCard.appendChild(bookAuthor);
     bookCard.appendChild(bookPages);
@@ -53,3 +51,5 @@ function addBookToLibrary() {
     booksContainer.appendChild(bookCard);
   }
 }
+addBookToLibrary();
+// TODO : Add all the styling to make them look the cards look great
