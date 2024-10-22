@@ -1,20 +1,38 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title></title>
-    <link href="./styles.css" rel="stylesheet" />
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title></title>
+  <link href="./styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="header">
     <h1 id="title">Your library</h1>
-    <div class="books-container">
+    <button id="add-book" type="button">Add Book</button>
+  </div>
 
-      <div id="test-book-card" class="book-card">
-        add things here to test
-      </div>
+  <dialog class="add-book-dialog" open>
+    <div>
+      <h2>Add a new book</h2>
+      <button type="button" class="x-button" id="close-dialog-button">X</button>
     </div>
-  </body>
-    <script src="code.js"> </script>
+
+    <form>
+      <input type="text" name="title" value="" placeholder="Book Title?" />
+      <input type="text" name="author" value="" placeholder="Author Name?" />
+      <input type="text" name="pages" value="" placeholder="Book length?" />
+      <input type="text" name="read" value="" placeholder="Have you read the book?" />
+      <button type="submit">Add new book</button>
+    </form>
+  </dialog>
+
+  <div class="books-container">
+    <div id="test-book-card" class="book-card">add things here to test</div>
+  </div>
+</body>
+<script src="code.js"></script>
+
 </html>

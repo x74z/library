@@ -51,5 +51,14 @@ function addBookToLibrary() {
     booksContainer.appendChild(bookCard);
   }
 }
+//test function
 addBookToLibrary();
-// TODO : Add all the styling to make them look the cards look great
+
+// Add book functionality
+const addBookButton = document.querySelector("#add-book");
+addBookButton.addEventListener("click", ()=>{
+  //code, watch the tutorial about dialogs and modals, to show it when clicked
+  
+})
+
+
