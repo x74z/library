@@ -14,25 +14,27 @@
     <button id="add-book" type="button">Add Book</button>
   </div>
 
-  <dialog class="add-book-dialog" open>
-    <div>
+  <dialog  class="add-book-dialog" >
+      <div>
+            <div>
       <h2>Add a new book</h2>
       <button type="button" class="x-button" id="close-dialog-button">X</button>
     </div>
 
     <form>
-      <input type="text" name="title" value="" placeholder="Book Title?" />
-      <input type="text" name="author" value="" placeholder="Author Name?" />
-      <input type="text" name="pages" value="" placeholder="Book length?" />
-      <input type="text" name="read" value="" placeholder="Have you read the book?" />
+      <input type="text" name="title" value="" required placeholder="Book Title?" />
+      <input type="text" name="author" value="" required placeholder="Author Name?" />
+      <input type="number" name="pages" value="" required placeholder="Book length?" />
+      <input  type="text" name="read" value="" required placeholder="Have you read the book? Yes or No" />
       <button type="submit">Add new book</button>
     </form>
-  </dialog>
+ 
+      </div>
+ </dialog>
 
   <div class="books-container">
-    <div id="test-book-card" class="book-card">add things here to test</div>
   </div>
 </body>
-<script src="code.js"></script>
+<script src="code.js" defer></script>
 
 </html>
