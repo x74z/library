@@ -153,3 +153,19 @@ body {
   font-weight: 600;
 color: #DAA49A;
 }
+.book-x-button{
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  align-self: end;
+  border-radius: 20px;
+}
+.book-status{
+  width: 20px;
+  height: 20px;
+  background-color: lightgoldenrodyellow;
+  align-self: start;
+  justify-self: end;
+  border-radius: 20px;
+
+}

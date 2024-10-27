@@ -1,28 +1,32 @@
 // All of the books will be stored here.
-const myLibrary = [
-  {
-    title: "1984",
-    author: "George Orwell",
-    pages: 328,
-    haveRead: "yes",
-  },
-
-  {
-    title: "The Catcher in the Rye",
-    author: "J.D. Salinger",
-    pages: 277,
-    haveRead: "no",
-  },
-];
+const myLibrary = [];
 
 function Book(title, author, pages, haveRead) {
   (this.title = title),
     (this.author = author),
     (this.pages = pages),
-    (this.haveRead = haveRead);
+    (this.haveRead = haveRead),
+    (this.htmlReference = "");
 }
+Book.prototype.changeReadStatus = function() {
+  if (this.haveRead === "yes") {
+    this.haveRead = "no";
+    return "no";
+  } else {
+    this.haveRead = "yes";
+    return "yes";
+  }
+};
 
 const booksContainer = document.querySelector(".books-container");
+// function addDataAtributte(book) {}
+
+function updateBooksIndexes() {
+  myLibrary.forEach((e) => {
+    e.htmlReference.dataset.index = myLibrary.indexOf(e);
+  });
+}
+
 function addBookCard(book) {
   // Make all the nodes that will be appended and add their classes
   const bookTitle = document.createElement("p");
@@ -33,6 +37,10 @@ function addBookCard(book) {
   bookPages.className = "book-pages";
   const bookRead = document.createElement("p");
   bookRead.className = "book-read";
+  const bookRemoveButton = document.createElement("button");
+  bookRemoveButton.className = "book-x-button";
+  const bookChangeReadStatus = document.createElement("button");
+  bookChangeReadStatus.className = "book-status";
 
   // Create the card the book will be in.
   const bookCard = document.createElement("div");
@@ -42,12 +50,35 @@ function addBookCard(book) {
   bookPages.textContent = book.pages;
   bookRead.textContent = book.haveRead;
 
+  // Add the corresponding data attribute, acording to index
+  const bookIndex = myLibrary.indexOf(book);
+  bookCard.setAttribute("data-index", bookIndex);
+
   // Append everything.
+  bookCard.appendChild(bookRemoveButton);
   bookCard.appendChild(bookTitle);
   bookCard.appendChild(bookAuthor);
   bookCard.appendChild(bookPages);
   bookCard.appendChild(bookRead);
+  bookCard.appendChild(bookChangeReadStatus);
+  //Add the final div
   booksContainer.appendChild(bookCard);
+  //Add a reference to the html bookCard in the object
+  book.htmlReference = bookCard;
+  // add the listener for the remove button
+  bookRemoveButton.addEventListener("click", () => {
+    const currentBookIndex = bookCard.dataset.index;
+    myLibrary.splice(currentBookIndex, 1);
+    booksContainer.removeChild(bookCard);
+    updateBooksIndexes();
+  });
+  //Handle the status button
+  bookChangeReadStatus.addEventListener("click", () => {
+    // TODO : add classes for styling of status
+    let newStatus = book.changeReadStatus();
+    bookRead.innerText = newStatus;
+  });
+
   return;
 }
 function addBookToLibrary(bookObject) {
@@ -93,6 +124,6 @@ addBookDialogForm.addEventListener("submit", (e) => {
   addBookCard(bookObject);
   //Reset all the values
   addBookDialogForm.reset();
-  
+
   addBookDialog.close();
 });
