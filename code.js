@@ -1,22 +1,41 @@
 // All of the books will be stored here.
 const myLibrary = [];
 
-function Book(title, author, pages, haveRead) {
-  (this.title = title),
-    (this.author = author),
-    (this.pages = pages),
-    (this.haveRead = haveRead),
-    (this.htmlReference = "");
-}
-Book.prototype.changeReadStatus = function() {
-  if (this.haveRead === "yes") {
-    this.haveRead = "no";
-    return "no";
-  } else {
-    this.haveRead = "yes";
-    return "yes";
+class Book {
+  constructor(title, author, pages, haveRead) {
+    (this.title = title),
+      (this.author = author),
+      (this.pages = pages),
+      (this.haveRead = haveRead),
+      (this.htmlReference = "");
   }
-};
+  changeReadStatus() {
+    if (this.haveRead === "yes") {
+      this.haveRead = "no";
+      return "no";
+    } else {
+      this.haveRead = "yes";
+      return "yes";
+    }
+  }
+}
+
+// function Book(title, author, pages, haveRead) {
+//   (this.title = title),
+//     (this.author = author),
+//     (this.pages = pages),
+//     (this.haveRead = haveRead),
+//     (this.htmlReference = "");
+// }
+// Book.prototype.changeReadStatus = function() {
+//   if (this.haveRead === "yes") {
+//     this.haveRead = "no";
+//     return "no";
+//   } else {
+//     this.haveRead = "yes";
+//     return "yes";
+//   }
+// };
 
 const booksContainer = document.querySelector(".books-container");
 // function addDataAtributte(book) {}
