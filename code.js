@@ -7,6 +7,7 @@ class Book {
       (this.author = author),
       (this.pages = pages),
       (this.haveRead = haveRead),
+    // The html reference is to be able to access the dataset
       (this.htmlReference = "");
   }
   changeReadStatus() {
@@ -20,22 +21,6 @@ class Book {
   }
 }
 
-// function Book(title, author, pages, haveRead) {
-//   (this.title = title),
-//     (this.author = author),
-//     (this.pages = pages),
-//     (this.haveRead = haveRead),
-//     (this.htmlReference = "");
-// }
-// Book.prototype.changeReadStatus = function() {
-//   if (this.haveRead === "yes") {
-//     this.haveRead = "no";
-//     return "no";
-//   } else {
-//     this.haveRead = "yes";
-//     return "yes";
-//   }
-// };
 
 const booksContainer = document.querySelector(".books-container");
 // function addDataAtributte(book) {}
