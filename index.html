@@ -14,30 +14,31 @@
     <button id="add-book" type="button">Add Book</button>
   </div>
 
-  <dialog  class="add-book-dialog" >
+  <dialog class="add-book-dialog">
+    <div>
       <div>
-            <div>
-      <h2>Add a new book</h2>
-      <button type="button" class="x-button" id="close-dialog-button">X</button>
-    </div>
-
-    <form>
-      <input type="text" name="title" value="Glod try" required placeholder="Book Title?" />
-      <input type="text" name="author" value="Ratcher" required placeholder="Author Name?" />
-      <input type="number" name="pages" value="339" required placeholder="Book length?" />
-          <select name="read" required>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-      <button type="submit">Add new book</button>
-    </form>
- 
+        <h2>Add a new book</h2>
+        <button type="button" class="x-button" id="close-dialog-button">
+          X
+        </button>
       </div>
- </dialog>
 
-  <div class="books-container">
-  </div>
+      <form>
+        <input type="text" name="title" value="Glod try" required placeholder="Book Title?" />
+        <input type="text" name="author" value="Ratcher" required placeholder="Author Name?" />
+        <input type="number" name="pages" value="339" required placeholder="Book length?" />
+        <select name="read" required>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+        <button type="submit">Add new book</button>
+      </form>
+    </div>
+  </dialog>
+
+  <div class="books-container"></div>
 </body>
-<script src="code.js" defer></script>
+<script src="add-to-dom.js" type="module"></script>
+<script src="code.js" type="module"></script>
 
 </html>
