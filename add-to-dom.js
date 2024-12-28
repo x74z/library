@@ -1,4 +1,4 @@
-import { Book } from "./code";
+import { Book } from "./code.js";
 
 function addBookCardChildren(bookCard) {
   // Make all the nodes that will be appended and add their classes

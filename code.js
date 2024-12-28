@@ -1,6 +1,6 @@
 // All of the books will be stored here.
 
-import { addBookCardToDOM } from "./add-to-dom";
+import { addBookCardToDOM } from "./add-to-dom.js";
 
 export class Book {
   static books = [];
